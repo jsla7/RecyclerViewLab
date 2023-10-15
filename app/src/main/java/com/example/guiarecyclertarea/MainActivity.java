@@ -12,7 +12,7 @@ import com.example.guiarecyclertarea.SharedPref.SharedManager;
 public class MainActivity extends AppCompatActivity {
 
 
-    Button btnAgg, btnLista, btnAcerca;
+    Button btnAgg, btnLista, btnAcerca, btnSalir;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         btnAgg = findViewById(R.id.btnAgregarTrab);
         btnLista = findViewById(R.id.btnMostlst);
         btnAcerca = findViewById(R.id.btnAcercaDe);
+
+        btnSalir = findViewById(R.id.btnSalir);
 
         btnAgg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,9 +46,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnSalir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Salir();
+            }
+        });
 
     }
 
+
+    private void Salir()
+    {
+        SharedManager rec = new SharedManager(this);
+        rec.eliminiarSharedP();
+        finish();
+
+    }
 
     @Override
     protected void onPause(){

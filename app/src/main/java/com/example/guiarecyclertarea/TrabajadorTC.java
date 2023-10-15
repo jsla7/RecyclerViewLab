@@ -113,7 +113,6 @@ public class TrabajadorTC extends AppCompatActivity {
         txtEdad = findViewById(R.id.txtEdad);
         txtSalario = findViewById(R.id.txtSalario);
         btnAg = findViewById(R.id.btnAgregar);
-
     }
     private void ok()
     {
